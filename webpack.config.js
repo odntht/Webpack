@@ -7,5 +7,8 @@ module.exports = {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'app/dist')
     },
-    plugins: [new HtmlWebPackPlugin()]
+    plugins: [new HtmlWebPackPlugin({
+        template: './app/src/app.html',
+        filename: 'app.html'
+    })]
 };   
