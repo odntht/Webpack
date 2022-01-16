@@ -9,6 +9,14 @@ module.exports = {
         path: path.resolve(__dirname, 'app/dist'),
         clean: true
     },
+    module: {
+        rules: [
+            {
+                test: /\.css$/, 
+                use: ['css-loader']
+            }
+        ]
+    },
     plugins: [
         new HtmlWebPackPlugin({
             template: './app/src/app.html',
