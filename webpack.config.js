@@ -27,8 +27,8 @@ module.exports = {
     },
     plugins: [
         new HtmlWebPackPlugin({
-            template: './app/src/app.html',
-            filename: 'app.html',
+            template: './app/src/index.html',
+            filename: 'index.html',
             hash: true
         }),
         // new CopyWebpackPlugin({
@@ -41,5 +41,10 @@ module.exports = {
             filename: 'style.css'
         }),
         new webpack.optimize.ModuleConcatenationPlugin()
-    ]
+    ],
+    devServer: {
+        contentBase: path.join(__dirname, 'dist'),
+        compress: true,
+        port: 3000
+    }
 };   
